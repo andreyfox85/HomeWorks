@@ -79,7 +79,7 @@ class User {
     }
 }
 
-    class Question {
+class Question {
 
         private String[] questions = {"В файл с каким расширением компилируется java-файл?\n" +
                 "1. cs\n2. java\n3. rar\n4. class\n5. exe",
@@ -102,8 +102,7 @@ class User {
             this.questions = questions;
         }
     }
-
-    class Answer {
+class Answer {
         private int[] answers = {4, 3, 1};
         Scanner sc = new Scanner(System.in);
         int rightAnswersCount =0;
