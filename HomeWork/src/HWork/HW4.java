@@ -2,14 +2,15 @@ package HWork;
 
 import java.util.Scanner;
 
-public class Main {
+public class HW4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         User user = new User();
+        Question question = new Question();
         System.out.println("Enter you name");
         user.setName();
-        System.out.println(user);
-        System.out.println(user.getName());
+        question.setQuestions(question.getQuestions());
+
         user.setRightAnswersCount();
         user.getWrongAnswersCount();
         System.out.println();
@@ -30,6 +31,9 @@ class Question {
     }
 
     public void setQuestions(String[] questions) {
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+        }
         this.questions = questions;
     }
 
