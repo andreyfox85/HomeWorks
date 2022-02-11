@@ -6,44 +6,31 @@ public class HW4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         User user = new User();
+        Answer answer = new Answer();
         Question question = new Question();
         System.out.println("Enter you name");
         user.setName();
-        question.setQuestions(question.getQuestions());
 
+        question.setQuestions(question.getQuestions());
+        answer.setAnswers(sc.nextInt());
         user.setRightAnswersCount();
         user.getWrongAnswersCount();
-        System.out.println();
-    }
-}
+        System.out.println("Результат: " + "правильно "  + " неправильно " );
 
-class Question {
-
-    private String[] questions = {"В файл с каким расширением компилируется java-файл?\n" +
-            "1. cs\n2. java\n3. rar\n4. class\n5. exe",
-            "С помощью какой команды git можно получить полную копию удаленного репозитория?\n" +
-                    "1. commit\n2. push\n3. clone\n4. copy",
-            "Какой применяется цикл, когда не известно количество итераций?\n" +
-                    "1. while\n2. for\n3. loop"};
-
-    public String[] getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(String[] questions) {
-        for (int i = 0; i < questions.length; i++) {
-            System.out.println(questions[i]);
-        }
-        this.questions = questions;
-    }
-
-    public Question() {
-        this.questions = questions;
     }
 }
 
 class User {
     Scanner sc = new Scanner(System.in);
+
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+
     private String name;
 
     private int rightAnswersCount;
@@ -92,18 +79,56 @@ class User {
     }
 }
 
-class Answer {
-    private int[] answers = {4, 3, 1};
+    class Question {
 
-    public int[] getAnswers() {
-        return answers;
+        private String[] questions = {"В файл с каким расширением компилируется java-файл?\n" +
+                "1. cs\n2. java\n3. rar\n4. class\n5. exe",
+                "С помощью какой команды git можно получить полную копию удаленного репозитория?\n" +
+                        "1. commit\n2. push\n3. clone\n4. copy",
+                "Какой применяется цикл, когда не известно количество итераций?\n" +
+                        "1. while\n2. for\n3. loop"};
+
+        public Question() {
+        }
+
+        public String[] getQuestions() {
+            return questions;
+        }
+
+        public void setQuestions(String[] questions) {
+            for (int i = 0; i < questions.length; i++) {
+                System.out.println(questions[i]);
+            }
+            this.questions = questions;
+        }
     }
 
-    public void setAnswers(int[] answers) {
-        this.answers = answers;
-    }
+    class Answer {
+        private int[] answers = {4, 3, 1};
+        Scanner sc = new Scanner(System.in);
+        int rightAnswersCount =0;
+        int wrongAnswersCount =0;
+        public int[] getAnswers() {
+            return answers;
+        }
 
-    public Answer() {
-        this.answers = answers;
+        public void setAnswers(int[] answers) {
+            for (int i = 0; i < answers.length; i++) {
+                System.out.println(answers[i]);
+                int answer = sc.nextInt();
+                if (answer == answers[i]) {
+                    rightAnswersCount++;
+                } else {
+                    wrongAnswersCount++;
+                }
+            }
+            this.answers = answers;
+        }
+
+        public Answer() {
+            this.answers = answers;
+        }
+
+        public void setAnswers(int nextInt) {
+        }
     }
-}
