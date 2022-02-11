@@ -37,9 +37,11 @@ class Question {
         this.questions = questions;
     }
 }
+
 class User {
     Scanner sc = new Scanner(System.in);
     private String name;
+
     private int rightAnswersCount;
     private int wrongAnswersCount;
 
@@ -50,17 +52,21 @@ class User {
     public int getWrongAnswersCount() {
         return wrongAnswersCount;
     }
+
     public void setWrongAnswersCount(int wrongAnswersCount) {
         this.wrongAnswersCount = wrongAnswersCount;
     }
+
     public User(int wrongAnswersCount) {
         this.wrongAnswersCount = wrongAnswersCount;
     }
+
     public int getRightAnswersCount() {
         return rightAnswersCount;
     }
+
     public void setRightAnswersCount() {
-        if (rightAnswersCount<0){
+        if (rightAnswersCount < 0) {
             System.out.println("Right answer count can not be < 0");
             return;
         }
@@ -70,25 +76,29 @@ class User {
     public String getName() {
         return name;
     }
-    public void setName(String userName) {
-        String say = sc.nextLine();
-        if (name.length()<1) {
+
+    public void setName() {
+        String name = sc.nextLine();
+        if (name.length() < 1) {
             System.out.println("Name is not valid");
             return;
         }
-        System.out.println("Hello: " + say);
-        name = userName;
+        System.out.println("Hello: " + name);
+        this.name = name;
     }
 }
+
 class Answer {
     private int[] answers = {4, 3, 1};
 
     public int[] getAnswers() {
         return answers;
     }
+
     public void setAnswers(int[] answers) {
         this.answers = answers;
     }
+
     public Answer() {
         this.answers = answers;
     }
