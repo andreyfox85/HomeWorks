@@ -22,52 +22,19 @@ public class HW4 {
 
 class User {
     Scanner sc = new Scanner(System.in);
-
-    public Scanner getSc() {
-        return sc;
-    }
-
-    public void setSc(Scanner sc) {
-        this.sc = sc;
-    }
-
     private String name;
-
     private int rightAnswersCount;
     private int wrongAnswersCount;
-
-    public User() {
-
+    private int answersCount;
+    public int getAnswersCount() {
+        return answersCount;
     }
-
-    public int getWrongAnswersCount() {
-        return wrongAnswersCount;
+    public void setAnswersCount(int answersCount) {
+        this.answersCount = answersCount;
     }
-
-    public void setWrongAnswersCount(int wrongAnswersCount) {
-        this.wrongAnswersCount = wrongAnswersCount;
-    }
-
-    public User(int wrongAnswersCount) {
-        this.wrongAnswersCount = wrongAnswersCount;
-    }
-
-    public int getRightAnswersCount() {
-        return rightAnswersCount;
-    }
-
-    public void setRightAnswersCount() {
-        if (rightAnswersCount < 0) {
-            System.out.println("Right answer count can not be < 0");
-            return;
-        }
-        this.rightAnswersCount = rightAnswersCount;
-    }
-
     public String getName() {
         return name;
     }
-
     public void setName() {
         String name = sc.nextLine();
         if (name.length() < 1) {
@@ -76,6 +43,22 @@ class User {
         }
         System.out.println("Hello: " + name);
         this.name = name;
+    }
+    public int getWrongAnswersCount() {
+        return wrongAnswersCount;
+    }
+    public void setWrongAnswersCount(int wrongAnswersCount) {
+        this.wrongAnswersCount = wrongAnswersCount;
+    }
+    public int getRightAnswersCount() {
+        return rightAnswersCount;
+    }
+    public void setRightAnswersCount() {
+        if (rightAnswersCount < 0) {
+            System.out.println("Right answer count can not be < 0");
+            return;
+        }
+        this.rightAnswersCount = rightAnswersCount;
     }
 }
 
