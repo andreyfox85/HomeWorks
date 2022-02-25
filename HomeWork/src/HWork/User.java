@@ -7,16 +7,6 @@ public class User {
     private String name;
     private int rightAnswersCount;
     private int wrongAnswersCount;
-    private int answersCount;
-
-    public int getAnswersCount() {
-        return answersCount;
-    }
-
-
-    public void setAnswersCount(int answersCount) {
-        this.answersCount = answersCount;
-    }
 
     public String getName() {
         return name;
@@ -37,10 +27,6 @@ public class User {
         return wrongAnswersCount;
     }
 
-    public void setWrongAnswersCount(int wrongAnswersCount) {
-        this.wrongAnswersCount = wrongAnswersCount;
-    }
-
     public int getRightAnswersCount() {
         return rightAnswersCount;
     }
@@ -52,7 +38,4 @@ public class User {
     public void addRightAnswer() {
         this.rightAnswersCount++;
     }
-
-
-
 }

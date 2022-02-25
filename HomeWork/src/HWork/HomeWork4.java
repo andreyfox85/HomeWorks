@@ -15,7 +15,6 @@ public class HomeWork4 {
         Question question3 = new Question("Какой применяется цикл, когда не известно количество итераций?\n" +
                 "1. while\n2. for\n3. loop", answer3);
 
-        int[] answers = {4, 3, 1};
         Question[] questions = {question1, question2, question3};
 
         User user = new User();
@@ -27,7 +26,7 @@ public class HomeWork4 {
             System.out.println(questions[i]);
 
             int answer = sc.nextInt();
-            if (answer == answers[i]) {
+            if (answer == questions[i].getAnswer().getCorrectAnswerNumber()) {
                 user.addRightAnswer();
                 System.out.println("Правильно");
             } else {

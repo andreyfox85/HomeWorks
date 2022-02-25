@@ -8,11 +8,6 @@ public class Question {
         return description;
     }
 
-    @Override
-    public String toString() {
-        return description;
-    }
-
     public Question(String description, Answer answer) {
         this.answer = answer;
         this.description = description;
@@ -20,5 +15,10 @@ public class Question {
 
     public Answer getAnswer() {
         return this.answer;
+    }
+
+    @Override
+    public String toString() {
+        return description;
     }
 }
