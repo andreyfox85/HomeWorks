@@ -4,6 +4,14 @@ public class Question {
     private String description;
     private Answer answer;
 
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public String toString() {
+        return description;
+    }
 
     public Question(String description, Answer answer) {
         this.answer = answer;
