@@ -1,24 +1,28 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
 
 public class HW5 {
 
 
     public static void main(String[] args) {
-        List<Integer> sortList = new ArrayList<>();
-        for (int i=0;i<1000000;i++){
-            sortList.add(new Double(Math.random()*Integer.MAX_VALUE).intValue());
+        //selectionSort
+        int array[] = new int[30];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100);
+            System.out.print(array[i] + "  ");
         }
-        Date startDate = new Date();
-        //Сортировка
-        long duration = startDate.getTime() - new Date().getTime();
-        System.out.println("My sort time = "+ duration);
-        startDate = new Date();
-        Collections.sort(sortList);
-        duration = startDate.getTime() - new Date().getTime();
-        System.out.println("My sort time = "+ duration);
-    }
+        System.out.println();
+        for (int i = 0; i < array.length; i++) {
+            int min = array[i];
+            int minId = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < min) {
+                    min = array[j];
+                    minId = j;
+                }
+            }
+            int temp = array[i];
+            array[i] = min;
+            array[minId] = temp;
+            System.out.print(array[i] + " ");
+        }
 
-}
+    }}
