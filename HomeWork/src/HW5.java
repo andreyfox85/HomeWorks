@@ -3,7 +3,7 @@ public class HW5 {
 
 
     public static void main(String[] args) {
-        //selectionSort
+        //selectionSort Сортировка выбором
         int array[] = new int[30];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 100);
