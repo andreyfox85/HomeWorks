@@ -25,4 +25,5 @@ public class HW5 {
             System.out.print(array[i] + " ");
         }
 
-    }}
+    }
+}
